@@ -1,0 +1,26 @@
+{
+	"name": "devpath-api",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "bun run --watch src/index.ts",
+		"start": "bun run src/index.ts",
+		"typecheck": "tsc --noEmit",
+		"db:generate": "drizzle-kit generate",
+		"db:push": "drizzle-kit push",
+		"db:policies": "bun run src/db/policies.ts",
+		"db:seed": "bun run src/seed.ts"
+	},
+	"dependencies": {
+		"@elysiajs/cors": "^1.1.1",
+		"@supabase/supabase-js": "^2.117.2",
+		"drizzle-orm": "^0.44.2",
+		"elysia": "^1.3.24",
+		"postgres": "^3.4.7"
+	},
+	"devDependencies": {
+		"@types/bun": "^1.3.4",
+		"drizzle-kit": "^0.31.4",
+		"typescript": "^5.9.3"
+	}
+}

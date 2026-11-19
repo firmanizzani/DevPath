@@ -1,0 +1,33 @@
+# Local design references
+/stitch/
+
+# Dependencies and generated output
+node_modules/
+.svelte-kit/
+build/
+dist/
+.output/
+.vercel/
+.netlify/
+.wrangler/
+coverage/
+playwright-report/
+test-results/
+*.tsbuildinfo
+vite.config.*.timestamp-*
+
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local verification scratch files and test credentials
+/api/tmp-*
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db
+Desktop.ini

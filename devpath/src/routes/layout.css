@@ -1,0 +1,422 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ------------------------------------------------------------------
+   Obsidian Synth — semantic tokens
+   Dark adalah mode bawaan, light adalah varian terang.
+------------------------------------------------------------------ */
+:root {
+	color-scheme: light;
+
+	--c-canvas: #fafafa;
+	--c-surface: #ffffff;
+	--c-elevated: #f4f4f5;
+	--c-raised: #e4e4e7;
+	--c-line: #e4e4e7;
+	--c-line-strong: #d4d4d8;
+
+	--c-ink: #09090b;
+	--c-ink-2: #3f3f46;
+	--c-ink-3: #71717a;
+	--c-ink-4: #a1a1aa;
+
+	--c-ok: #059669;
+	--c-ok-tint: rgba(5, 150, 105, 0.08);
+	--c-ok-line: rgba(5, 150, 105, 0.28);
+
+	--c-info: #0891b2;
+	--c-info-tint: rgba(8, 145, 178, 0.08);
+	--c-info-line: rgba(8, 145, 178, 0.28);
+
+	--c-warn: #d97706;
+	--c-warn-tint: rgba(217, 119, 6, 0.08);
+	--c-warn-line: rgba(217, 119, 6, 0.28);
+
+	--c-err: #dc2626;
+	--c-err-tint: rgba(220, 38, 38, 0.07);
+	--c-err-line: rgba(220, 38, 38, 0.28);
+
+	--c-code-bg: #0c0c0f;
+	--c-code-head: #16161a;
+
+	--c-glow: 0 0 20px -2px rgba(9, 9, 11, 0.18);
+}
+
+.dark {
+	color-scheme: dark;
+
+	--c-canvas: #09090b;
+	--c-surface: #121214;
+	--c-elevated: #18181b;
+	--c-raised: #27272a;
+	--c-line: #27272a;
+	--c-line-strong: #3f3f46;
+
+	--c-ink: #ffffff;
+	--c-ink-2: #d4d4d8;
+	--c-ink-3: #a1a1aa;
+	--c-ink-4: #71717a;
+
+	--c-ok: #10b981;
+	--c-ok-tint: rgba(16, 185, 129, 0.1);
+	--c-ok-line: rgba(16, 185, 129, 0.3);
+
+	--c-info: #06b6d4;
+	--c-info-tint: rgba(6, 182, 212, 0.1);
+	--c-info-line: rgba(6, 182, 212, 0.3);
+
+	--c-warn: #f59e0b;
+	--c-warn-tint: rgba(245, 158, 11, 0.1);
+	--c-warn-line: rgba(245, 158, 11, 0.3);
+
+	--c-err: #ef4444;
+	--c-err-tint: rgba(239, 68, 68, 0.1);
+	--c-err-line: rgba(239, 68, 68, 0.3);
+
+	--c-code-bg: #000000;
+	--c-code-head: #121214;
+
+	--c-glow: 0 0 20px -2px rgba(255, 255, 255, 0.18);
+}
+
+@theme inline {
+	--font-sans: 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+	--font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+	--color-canvas: var(--c-canvas);
+	--color-surface: var(--c-surface);
+	--color-elevated: var(--c-elevated);
+	--color-raised: var(--c-raised);
+	--color-line: var(--c-line);
+	--color-line-strong: var(--c-line-strong);
+
+	--color-ink: var(--c-ink);
+	--color-ink-2: var(--c-ink-2);
+	--color-ink-3: var(--c-ink-3);
+	--color-ink-4: var(--c-ink-4);
+
+	--color-ok: var(--c-ok);
+	--color-ok-tint: var(--c-ok-tint);
+	--color-ok-line: var(--c-ok-line);
+	--color-info: var(--c-info);
+	--color-info-tint: var(--c-info-tint);
+	--color-info-line: var(--c-info-line);
+	--color-warn: var(--c-warn);
+	--color-warn-tint: var(--c-warn-tint);
+	--color-warn-line: var(--c-warn-line);
+	--color-err: var(--c-err);
+	--color-err-tint: var(--c-err-tint);
+	--color-err-line: var(--c-err-line);
+
+	--color-code-bg: var(--c-code-bg);
+	--color-code-head: var(--c-code-head);
+
+	--radius-xs: 0.25rem;
+	--radius-sm: 0.375rem;
+	--radius-md: 0.5rem;
+	--radius-lg: 0.75rem;
+
+	--text-display: 3.25rem;
+	--text-display--line-height: 3.75rem;
+	--text-display--letter-spacing: -0.03em;
+	--text-display--font-weight: 700;
+
+	--text-display-sm: 2.125rem;
+	--text-display-sm--line-height: 2.625rem;
+	--text-display-sm--letter-spacing: -0.02em;
+	--text-display-sm--font-weight: 700;
+
+	--text-title: 1.5rem;
+	--text-title--line-height: 2rem;
+	--text-title--letter-spacing: -0.02em;
+	--text-title--font-weight: 600;
+
+	--shadow-glow: var(--c-glow);
+}
+
+@layer base {
+	* {
+		border-color: var(--c-line);
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		background-color: var(--c-canvas);
+		color: var(--c-ink);
+		font-family: var(--font-sans);
+		-webkit-font-smoothing: antialiased;
+		text-rendering: optimizeLegibility;
+	}
+
+	::selection {
+		background: var(--c-ink);
+		color: var(--c-canvas);
+	}
+
+	:focus-visible {
+		outline: 2px solid var(--c-ink);
+		outline-offset: 2px;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4 {
+		text-wrap: balance;
+	}
+}
+
+@layer utilities {
+	.label {
+		font-family: var(--font-mono);
+		font-size: 11px;
+		line-height: 16px;
+		letter-spacing: 0.06em;
+		font-weight: 500;
+		text-transform: uppercase;
+	}
+
+	.mono {
+		font-family: var(--font-mono);
+		font-variant-numeric: tabular-nums;
+	}
+
+	.line-clamp-3 {
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+}
+
+/* ---------------------------------------------------------------
+   Animasi transisi halus bawaan Svelte (route change / enter)
+--------------------------------------------------------------- */
+@keyframes devpath-rise {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes devpath-fade {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes devpath-draw {
+	from {
+		stroke-dashoffset: var(--dash, 1000);
+	}
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
+.animate-rise {
+	animation: devpath-rise 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-fade {
+	animation: devpath-fade 0.4s ease both;
+}
+
+.stagger > * {
+	animation: devpath-rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.stagger > *:nth-child(1) {
+	animation-delay: 0.02s;
+}
+.stagger > *:nth-child(2) {
+	animation-delay: 0.06s;
+}
+.stagger > *:nth-child(3) {
+	animation-delay: 0.1s;
+}
+.stagger > *:nth-child(4) {
+	animation-delay: 0.14s;
+}
+.stagger > *:nth-child(5) {
+	animation-delay: 0.18s;
+}
+.stagger > *:nth-child(6) {
+	animation-delay: 0.22s;
+}
+.stagger > *:nth-child(7) {
+	animation-delay: 0.26s;
+}
+.stagger > *:nth-child(8) {
+	animation-delay: 0.3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		transition-duration: 0.01ms !important;
+	}
+}
+
+/* ---------------------------------------------------------------
+   Syntax highlighting (Prism) — semantic accent, bukan dekoratif
+--------------------------------------------------------------- */
+code[class*='language-'],
+pre[class*='language-'] {
+	color: var(--c-ink-2);
+	background: none;
+	text-shadow: none;
+	font-family: var(--font-mono);
+	font-size: 13px;
+	line-height: 1.7;
+	tab-size: 2;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: var(--c-ink-4);
+	font-style: italic;
+}
+
+.token.punctuation {
+	color: var(--c-ink-3);
+}
+
+.token.namespace {
+	opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: var(--c-info);
+}
+
+.token.boolean,
+.token.number {
+	color: var(--c-warn);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: var(--c-ok);
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+	color: var(--c-ink-3);
+	background: transparent;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: var(--c-info);
+	font-weight: 500;
+}
+
+.token.function,
+.token.class-name {
+	color: var(--c-ink);
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: var(--c-warn);
+}
+/* ---------------------------------------------------------------
+   Rich text (materi & pembahasan kuis)
+--------------------------------------------------------------- */
+.rt strong {
+	color: var(--c-ink);
+	font-weight: 600;
+}
+
+.rt em {
+	font-style: italic;
+	color: var(--c-ink-2);
+}
+
+.rt u {
+	text-decoration-color: var(--c-info);
+	text-underline-offset: 3px;
+}
+
+.rt code {
+	font-family: var(--font-mono);
+	font-size: 0.86em;
+	padding: 0.12em 0.4em;
+	border-radius: 4px;
+	background: var(--c-raised);
+	border: 1px solid var(--c-line);
+	color: var(--c-ink);
+	white-space: nowrap;
+}
+
+.rt a {
+	color: var(--c-info);
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+/* Diagram SVG — pastikan tipografi mengikuti token */
+svg text {
+	font-family: var(--font-sans);
+}
+
+svg text[font-family='var(--font-mono)'] {
+	font-family: var(--font-mono);
+}
+/* Transisi halus antar halaman (View Transitions API) */
+::view-transition-old(root) {
+	animation: devpath-fade-out 0.18s ease both;
+}
+
+::view-transition-new(root) {
+	animation: devpath-rise 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes devpath-fade-out {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+/* Drop cap pada paragraf pertama materi */
+.rt.dropcap > p:first-of-type::first-letter {
+	float: left;
+	font-size: 3.3em;
+	line-height: 0.86;
+	font-weight: 700;
+	padding-right: 0.08em;
+	margin-top: 0.05em;
+	color: var(--c-ink);
+}
