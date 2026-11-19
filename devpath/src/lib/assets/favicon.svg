@@ -1,13 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-	<rect width="32" height="32" rx="7" fill="#09090b" />
-	<rect x="0.5" y="0.5" width="31" height="31" rx="6.5" fill="none" stroke="#27272a" />
-	<path
-		d="M9 11.5 L14 16 L9 20.5"
-		fill="none"
-		stroke="#10b981"
-		stroke-width="2.4"
-		stroke-linecap="round"
-		stroke-linejoin="round"
-	/>
-	<path d="M16.5 21 H23" fill="none" stroke="#e4e1e6" stroke-width="2.4" stroke-linecap="round" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+	<title>DevPath</title>
+	<rect x=".5" y=".5" width="39" height="39" rx="10" fill="#09090b" stroke="#3f3f46"/>
+	<g fill="none" stroke="#fafafa" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round">
+		<path d="M11 9h9a11 11 0 0 1 0 22h-9"/>
+		<path d="m10 16 6 4-6 4"/>
+	</g>
+	<g fill="#fafafa">
+		<circle cx="11" cy="9" r="2.5"/>
+		<circle cx="11" cy="31" r="2.5"/>
+	</g>
 </svg>

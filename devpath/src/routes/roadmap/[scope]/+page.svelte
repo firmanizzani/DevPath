@@ -11,10 +11,6 @@
 	const avgScore = $derived(stats.avgScore);
 </script>
 
-<svelte:head>
-	<title>Roadmap {data.scope.title} — DevPath</title>
-</svelte:head>
-
 <div class="px-4 md:px-8 py-8 max-w-4xl mx-auto animate-fade">
 	<a
 		href="/"

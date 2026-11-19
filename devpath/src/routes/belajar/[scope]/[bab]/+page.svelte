@@ -83,10 +83,6 @@
 	}
 </script>
 
-<svelte:head>
-	<title>Bab {data.mod.bab_number}: {data.mod.title} — DevPath</title>
-</svelte:head>
-
 {#if !unlocked}
 	<div class="px-4 md:px-8 py-20 max-w-lg mx-auto text-center animate-fade">
 		<div class="w-14 h-14 rounded-full bg-elevated border border-line grid place-items-center mx-auto text-ink-3">

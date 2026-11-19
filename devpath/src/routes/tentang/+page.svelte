@@ -36,10 +36,6 @@
 	];
 </script>
 
-<svelte:head>
-	<title>Tentang — DevPath</title>
-</svelte:head>
-
 <div class="px-4 md:px-8 py-12 max-w-4xl mx-auto animate-fade">
 	<p class="label text-ink-4 mb-3">Tentang Platform</p>
 	<h1 class="text-display-sm md:text-display text-ink font-bold tracking-tight">

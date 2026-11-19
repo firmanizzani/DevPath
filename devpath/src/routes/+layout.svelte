@@ -47,7 +47,8 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<title>DevPath</title>
+	<link rel="icon" type="image/svg+xml" href={favicon} />
 </svelte:head>
 
 <div class="min-h-screen flex flex-col">

@@ -137,10 +137,6 @@
 	const letters = ['A', 'B', 'C', 'D'];
 </script>
 
-<svelte:head>
-	<title>Kuis Bab {data.mod.bab_number} — {data.scope.title} · DevPath</title>
-</svelte:head>
-
 <svelte:window onkeydown={onKey} />
 
 {#if !unlocked}

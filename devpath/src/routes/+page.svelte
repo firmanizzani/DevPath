@@ -34,10 +34,6 @@
 	);
 </script>
 
-<svelte:head>
-	<title>DevPath — Kuasai Keahlian IT dengan Alur Karir Terstruktur</title>
-</svelte:head>
-
 <!-- HERO -->
 <section class="relative w-full overflow-hidden px-4 md:px-8 py-16 md:py-20 flex flex-col items-center justify-center text-center">
 	<div

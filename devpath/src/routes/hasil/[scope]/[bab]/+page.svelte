@@ -53,10 +53,6 @@
 	}
 </script>
 
-<svelte:head>
-	<title>Hasil Kuis Bab {data.mod.bab_number} — {data.scope.title} · DevPath</title>
-</svelte:head>
-
 {#if !checked}
 	<div class="py-24 text-center text-ink-4 label">Menyiapkan hasil kuis…</div>
 {:else if !result}

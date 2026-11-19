@@ -30,10 +30,6 @@
 	}
 </script>
 
-<svelte:head>
-	<title>Progres Saya — DevPath</title>
-</svelte:head>
-
 <div class="px-4 md:px-8 py-10 max-w-5xl mx-auto animate-fade">
 	<div class="flex flex-wrap items-end justify-between gap-4 mb-8">
 		<div>

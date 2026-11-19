@@ -7,8 +7,4 @@
 	);
 </script>
 
-<svelte:head>
-	<title>Masuk — DevPath</title>
-</svelte:head>
-
 <AuthForm mode="login" initialError={oauthError} />

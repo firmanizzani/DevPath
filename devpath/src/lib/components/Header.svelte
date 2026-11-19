@@ -3,7 +3,6 @@
 	import { goto, invalidateAll } from '$app/navigation';
 	import {
 		Search,
-		Terminal,
 		ChevronDown,
 		Menu,
 		X,
@@ -14,6 +13,7 @@
 		ChartColumnIncreasing
 	} from '@lucide/svelte';
 	import ThemeToggle from './ThemeToggle.svelte';
+	import logo from '$lib/assets/favicon.svg';
 	import { progress, resetAll, totalXp } from '$lib/services/progress';
 	import { signOut, initials } from '$lib/services/supabase';
 
@@ -68,11 +68,7 @@
 	<div class="h-16 px-4 md:px-8 flex items-center justify-between gap-4">
 		<div class="flex items-center gap-3 shrink-0">
 			<a href="/" class="flex items-center gap-2.5 group" data-sveltekit-reload={false}>
-				<span
-					class="w-8 h-8 rounded-lg bg-elevated border border-line grid place-items-center text-ok group-hover:border-line-strong transition-colors"
-				>
-					<Terminal size={17} strokeWidth={2} />
-				</span>
+				<img src={logo} alt="" width="32" height="32" class="w-8 h-8 shrink-0" />
 				<span class="text-[17px] font-bold tracking-tight text-ink">DevPath</span>
 			</a>
 			<span class="hidden sm:inline label px-2 py-1 rounded-xs bg-elevated border border-line text-ink-2"
