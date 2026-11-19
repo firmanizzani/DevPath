@@ -1,5 +1,6 @@
 # Local design references
 /stitch/
+/.taste-skill/
 
 # Dependencies and generated output
 node_modules/

@@ -203,7 +203,7 @@
 						<span class="text-ink-4">Kumpulkan setelah semua soal terjawab.</span>
 					</p>
 				</div>
-				<div class="shrink-0">
+				<div class="w-full md:w-auto min-w-0 md:shrink-0">
 					<p class="label text-ink-4 mb-2 text-right">Nomor Soal</p>
 					<div class="flex flex-wrap items-center gap-1.5 justify-end">
 						{#each questions as _, i (i)}

@@ -29,12 +29,12 @@
 			? 'text-ok'
 			: stats.status === 'in-progress'
 				? 'text-warn'
-				: 'text-ink-4'
+				: 'text-ink-3'
 	);
 </script>
 
 <article
-	class="group flex flex-col justify-between rounded-xl bg-surface border border-line p-6 transition-all duration-300 {hoverBorder} hover:-translate-y-0.5"
+	class="scope-card group flex flex-col justify-between rounded-xl bg-surface border border-line p-6 transition-[border-color,box-shadow,transform] duration-200 {hoverBorder} hover:-translate-y-0.5"
 >
 	<div class="flex flex-col">
 		<div class="flex items-center justify-between gap-3 mb-4">
@@ -49,9 +49,9 @@
 		</div>
 
 		<h2 class="text-[20px] leading-7 font-semibold text-ink tracking-tight mb-1">{scope.title}</h2>
-		<p class="text-sm leading-[22px] text-ink-3 mb-4 line-clamp-3">{scope.description}</p>
+		<p class="scope-description text-sm leading-[22px] text-ink-3 mb-4 line-clamp-3">{scope.description}</p>
 
-		<div class="flex items-center gap-2 text-[11px] mono text-ink-4 mb-6">
+		<div class="flex items-center gap-2 text-[12px] mono text-ink-3 mb-6">
 			<BookOpen size={13} strokeWidth={1.75} />
 			<span>{stats.total} Bab • {questions} Kuis • {scope.est_time}</span>
 		</div>
@@ -70,8 +70,8 @@
 
 		<a
 			href="/roadmap/{scope.id}"
-			class="mt-2 w-full py-2.5 px-4 rounded-lg bg-ink text-canvas hover:opacity-90 font-semibold text-sm flex items-center justify-center gap-1.5 transition-all active:scale-[0.98]"
-			style="box-shadow: 0 0 16px -4px var(--c-glow)"
+			class="scope-action mt-2 w-full py-2.5 px-4 rounded-lg bg-ink text-canvas hover:opacity-90 font-semibold text-sm flex items-center justify-center gap-1.5 transition-[opacity,transform] active:scale-[0.98]"
+			aria-label="{stats.status === 'completed' ? 'Ulangi Belajar' : stats.status === 'in-progress' ? 'Lanjutkan Belajar' : 'Mulai Belajar'} {scope.title}"
 		>
 			{#if stats.status === 'completed'}
 				<span>Ulangi Belajar</span>
@@ -86,3 +86,39 @@
 		</a>
 	</div>
 </article>
+
+<style>
+	.scope-card {
+		height: 100%;
+	}
+
+	.scope-card:hover {
+		box-shadow: 0 8px 20px -14px rgb(0 0 0 / 0.18);
+	}
+
+	.scope-card:focus-within {
+		border-color: var(--c-line-strong);
+	}
+
+	.scope-action {
+		min-height: 42px;
+	}
+
+	.scope-action:focus-visible {
+		outline: 2px solid var(--c-ink);
+		outline-offset: 3px;
+	}
+
+	@media (min-width: 768px) {
+		.scope-description {
+			min-height: 66px;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.scope-card:hover,
+		.scope-action:active {
+			transform: none;
+		}
+	}
+</style>
